@@ -4,6 +4,7 @@ echo 'run setup prior to this'
 source ./scripts/setup.sh
 
 storyId=""
+date=$(date '+%Y-%m-%d %H:%M:%S')
 
 json="
 {\"appLinkName\":\"$AutomationName\",
@@ -12,11 +13,11 @@ json="
         \"title\":\"Build $BUILD_NUMBER completed with status $3\",
         \"status\":\"New\",
         \"priority\":\"major\",
-        \"created_by\":\"vijay\",
-        \"assigned_to\":\"vijay\",
+        \"created_by\":\"jenkins\",
+        \"assigned_to\":\"jenkins\",
         \"linked_story_id\":\"$storyId\",
-        \"created_time\":\"`date`\",
-        \"modified_time\":\"`date`\",
+        \"created_time\":\"$date\",
+        \"modified_time\":\"$date\",
         \"BUILD_ID\":\"$BUILD_ID\",
         \"BUILD_DISPLAY_NAME\":\"$BUILD_DISPLAY_NAME\",
         \"JOB_NAME\":\"$JOB_NAME\",
