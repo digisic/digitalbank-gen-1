@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo 'run setup prior to this'
-./scripts/setup.sh
+source ./scripts/setup.sh
 
 json="
 {\"appLinkName\":\"JenkinsBuildResults2Jira\",
@@ -38,8 +38,8 @@ json="
         \"GIT_AUTHOR_EMAIL\":\"$GIT_AUTHOR_EMAIL\"
         }}"
 echo "Send JSON: $json"
-echo "via ${ConnectAllUrl}/api/2/postRecord?apikey=$ConnectAllApikey"
+echo "via $ConnectAllUrl/api/2/postRecord?apikey=$ConnectAllApikey"
 curl \
 --header "Content-Type: application/json;charset=UTF-8" -X POST \
 -d "$json" \
- ${ConnectAllUrl}/connectall/api/2/postRecord?apikey=$ConnectAllApiKey
+ $ConnectAllUrl/connectall/api/2/postRecord?apikey=$ConnectAllApiKey
