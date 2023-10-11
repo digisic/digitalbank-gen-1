@@ -4,7 +4,7 @@ echo 'run setup prior to this'
 source ./scripts/setup.sh
 
 json="
-{\"appLinkName\":\"JenkinsBuildResults2Jira\",
+{\"appLinkName\":\"$AutomationName\",
     \"fields\":
        {\"id\":\"$BUILD_TAG\",
         \"title\":\"Build $BUILD_NUMBER completed with status $3\",
