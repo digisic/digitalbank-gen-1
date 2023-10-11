@@ -3,7 +3,7 @@
 echo 'run setup prior to this'
 source ./scripts/setup.sh
 
-storyId = ""
+storyId=""
 
 json="
 {\"appLinkName\":\"$AutomationName\",
