@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo 'run setup prior to this'
+./setup.sh
 
 json="
 {\"appLinkName\":\"JenkinsBuildResults2Jira\",
