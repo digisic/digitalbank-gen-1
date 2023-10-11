@@ -3,6 +3,8 @@
 echo 'run setup prior to this'
 source ./scripts/setup.sh
 
+storyId = ""
+
 json="
 {\"appLinkName\":\"$AutomationName\",
     \"fields\":
@@ -12,7 +14,7 @@ json="
         \"priority\":\"major\",
         \"created_by\":\"vijay\",
         \"assigned_to\":\"vijay\",
-        \"linked_story_id\":"$5",
+        \"linked_story_id\":\"$storyId\",
         \"created_time\":\"`date`\",
         \"modified_time\":\"`date`\",
         \"BUILD_ID\":\"$BUILD_ID\",
