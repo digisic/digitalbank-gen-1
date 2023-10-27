@@ -6,6 +6,7 @@ pipeline {
         maven "M3" 
         // add something in here
         // TO DO - add more here again
+        // another comment for another demo
     }
 
     stages {
