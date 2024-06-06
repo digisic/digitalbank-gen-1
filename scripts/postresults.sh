@@ -5,14 +5,13 @@ source ./scripts/setup.sh
 
 storyId=""
 date=$(date '+%Y-%m-%d %H:%M:%S')
-build_result=$currentResult
 
 json="
 {\"appLinkName\":\"$AutomationName\",
     \"fields\":
        {\"id\":\"$BUILD_TAG\",
-        \"title\":\"Build $BUILD_NUMBER completed with status $build_result\",
-        \"status\":\"$build_result\",
+        \"title\":\"Build $BUILD_NUMBER completed with status SUCCESS\",
+        \"status\":\"SUCCESS\",
         \"created_by\":\"$USER\",
         \"assigned_to\":\"$USER\",
         \"created_time\":\"$date\",
