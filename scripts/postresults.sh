@@ -10,8 +10,8 @@ json="
 {\"appLinkName\":\"$AutomationName\",
     \"fields\":
        {\"id\":\"$BUILD_TAG\",
-        \"title\":\"Build $BUILD_NUMBER completed with status $3\",
-        \"status\":\"New\",
+        \"title\":\"Build $BUILD_NUMBER completed with status $BUILD_RESULT\",
+        \"status\":\"$BUILD_RESULT\",
         \"priority\":\"major\",
         \"created_by\":\"jenkins\",
         \"assigned_to\":\"jenkins\",
