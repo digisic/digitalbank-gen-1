@@ -5,7 +5,7 @@ source ./scripts/setup.sh
 
 storyId=""
 date=$(date '+%Y-%m-%d %H:%M:%S')
-build_result=${currentBuild.currentResult}
+build_result=$currentResult
 
 json="
 {\"appLinkName\":\"$AutomationName\",
