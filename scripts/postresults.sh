@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo 'run setup prior to this'
+source ./scripts/get_results.groovy
 source ./scripts/setup.sh
 
 storyId=""
