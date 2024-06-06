@@ -10,8 +10,8 @@ json="
 {\"appLinkName\":\"$AutomationName\",
     \"fields\":
        {\"id\":\"$BUILD_TAG\",
-        \"title\":\"Build $BUILD_NUMBER completed with status $BUILD_RESULT\",
-        \"status\":\"$BUILD_RESULT\",
+        \"title\":\"Build $BUILD_NUMBER completed with status ${currentBuild.currentResult}\",
+        \"status\":\"${currentBuild.currentResult}\",
         \"created_by\":\"$USER\",
         \"assigned_to\":\"$USER\",
         \"created_time\":\"$date\",
