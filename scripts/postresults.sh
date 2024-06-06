@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo 'run setup prior to this'
+echo "All parameters: $@"
 source ./scripts/setup.sh
 
 storyId=""
