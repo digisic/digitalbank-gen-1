@@ -8,7 +8,11 @@ pipeline {
         // TO DO - add more here again
         // another comment for another demo
     }
-
+    
+    environment {
+        BUILD_RESULT = 'DEFAULT' // will be overwritten
+    }
+    
     stages {
         
         stage('Checkout') {
@@ -52,6 +56,9 @@ pipeline {
         }
         stage('Post Results') {
             steps {
+                env.BUILD_RESULT = currentBuild.currentResult
+                echo "Build status: ${env.BUILD_RESULT}"
+                
                 sh 'source ./scripts/setup.sh'
                 sh 'env'
                 sh './scripts/postresults.sh'
