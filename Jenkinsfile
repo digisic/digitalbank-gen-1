@@ -54,15 +54,12 @@ pipeline {
                 echo 'Publish'
             }
         }
+
         stage('Post Results') {
-            script {
-                env.BUILD_RESULT = currentBuild.currentResult
-                echo "Build status: ${env.BUILD_RESULT}"
-            }
-            
             steps {
                 sh 'source ./scripts/setup.sh'
-                sh 'env'             
+                sh 'env'
+                sh 'BUILD_RESULT = currentBuild.currentResult'
                 sh './scripts/postresults.sh'
             }
         }
