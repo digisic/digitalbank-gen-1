@@ -32,6 +32,10 @@ pipeline {
             steps {
                 echo 'Build'
                // sh "mvn -Dmaven.test.failure.ignore=true clean package -f digitalbank-gen-one/bank/pom.xml"
+
+                catchError(message: "Something went wrong", buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
+                    sh "exit 1"
+                }
             }
         }
         stage('Test') {
