@@ -35,7 +35,7 @@ pipeline {
                     script {
                         try {
                             // sh "mvn -Dmaven.test.failure.ignore=true clean package -f digitalbank-gen-one/bank/pom.xml"
-                            sh 'exit 1'
+                            sh 'exit 0'
                         } catch (e) {
                             echo 'Something went wrong during build stage.'
                             throw e
