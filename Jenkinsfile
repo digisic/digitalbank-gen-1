@@ -25,8 +25,7 @@ pipeline {
         stage('Clean') {
             steps {
                 echo 'Hello World'
-                //sh "mvn clean:clean -f bank/pom.xml"
-                "mvn clean:clean -f bank/pom.xml"
+                sh "mvn clean:clean -f bank/pom.xml"
             }
         }
         stage('Build') {
@@ -52,6 +51,18 @@ pipeline {
             }
         }
 
+        post {
+            always {
+                script {
+                    source ./scripts/setup.sh
+                    env.BUILD_RESULT = currentBuild.currentResult
+                    echo "Build status: ${env.BUILD_RESULT}"
+                    sh './scripts/postresults.sh'
+                }
+            }
+        }
+        
+        /* this works
         stage('Post Results') {
             steps {
                 sh 'source ./scripts/setup.sh'
@@ -62,6 +73,6 @@ pipeline {
                 }
                 sh './scripts/postresults.sh'
             }
-        }
+        }*/
     }
 }
