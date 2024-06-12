@@ -56,7 +56,7 @@ pipeline {
                 sh 'source ./scripts/setup.sh'
                 sh 'env'
                 script {
-                    def env.BUILD_RESULT = currentBuild.currentResult
+                    env.BUILD_RESULT = currentBuild.currentResult
                     echo "Build status: ${env.BUILD_RESULT}"
                 }
                 sh './scripts/postresults.sh'
