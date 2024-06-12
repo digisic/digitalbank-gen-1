@@ -60,8 +60,8 @@ pipeline {
                 sh 'source ./scripts/setup.sh'
                 sh 'env'
                 script {
-                    env.BUILD_RESULT = currentBuild.currentResult
-                    echo "Build status: ${env.BUILD_RESULT}"
+                    //env.BUILD_RESULT = currentBuild.currentResult
+                    echo "Build status: ${currentBuild.currentResult}"
                 }
                 sh './scripts/postresults.sh'
             }
