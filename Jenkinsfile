@@ -28,27 +28,36 @@ pipeline {
                 sh "mvn clean:clean -f bank/pom.xml"
             }
         }
+        
         stage('Build') {
             steps {
-                echo 'Build'
-               // sh "mvn -Dmaven.test.failure.ignore=true clean package -f digitalbank-gen-one/bank/pom.xml"
-
-                catchError(message: "Something went wrong", buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
-                    sh "exit 1"
+                catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
+                    script {
+                        try {
+                            // sh "mvn -Dmaven.test.failure.ignore=true clean package -f digitalbank-gen-one/bank/pom.xml"
+                            sh 'exit 0'
+                        } catch (e) {
+                            echo 'Something went wrong during build stage.'
+                            throw e
+                        }
+                    }
                 }
             }
         }
+        
         stage('Test') {
             steps {
                 echo 'Test'
                // sh "mvn test -f digitalbank-gen-one/bank/pom.xml"
             }
         }
+        
         stage('Package') {
             steps {
                 echo 'Package'
             }
         }
+        
         stage('Publish') {
             steps {
                 echo 'Publish'
