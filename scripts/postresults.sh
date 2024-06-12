@@ -16,6 +16,7 @@ json="
         \"assigned_to\":\"$USER\",
         \"created_time\":\"$date\",
         \"modified_time\":\"$date\",
+        \"BUILD_DURATION\":\"$BUILD_DURATION\",
         \"BUILD_ID\":\"$BUILD_ID\",
         \"BUILD_DISPLAY_NAME\":\"$BUILD_DISPLAY_NAME\",
         \"JOB_NAME\":\"$JOB_NAME\",
