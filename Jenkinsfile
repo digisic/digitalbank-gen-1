@@ -50,17 +50,6 @@ pipeline {
                 echo 'Publish'
             }
         }
-
-        post {
-            always {
-                script {
-                    source ./scripts/setup.sh
-                    env.BUILD_RESULT = currentBuild.currentResult
-                    echo "Build status: ${env.BUILD_RESULT}"
-                    sh './scripts/postresults.sh'
-                }
-            }
-        }
         
         /* this works
         stage('Post Results') {
@@ -74,5 +63,16 @@ pipeline {
                 sh './scripts/postresults.sh'
             }
         }*/
+    }
+    
+    post {
+        always {
+            script {
+                    source ./scripts/setup.sh
+                    env.BUILD_RESULT = currentBuild.currentResult
+                    echo "Build status: ${env.BUILD_RESULT}"
+                    sh './scripts/postresults.sh'
+            }
+        }
     }
 }
