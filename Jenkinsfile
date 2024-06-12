@@ -24,7 +24,7 @@ pipeline {
         
         stage('Clean') {
             steps {
-                echo 'Hello World!'
+                echo 'Hello World'
                 sh "mvn clean:clean -f bank/pom.xml"
             }
         }
