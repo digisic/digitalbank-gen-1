@@ -70,7 +70,7 @@ pipeline {
                 sh 'env'
                 script {
                     env.BUILD_RESULT = currentBuild.currentResult
-                    echo "Build status: ${env.BUILD_RESULT}"
+                    env.BUILD_DURATION = currentBuild.durationString
                 }
                 sh './scripts/postresults.sh'
             }
